@@ -430,12 +430,17 @@ body {
   .footer-top { grid-template-columns: 1fr 1fr; }
   .desktop-br { display: none; }
 }
+@keyframes slideDownMenu {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 @media (max-width: 768px) {
   .nav-links.mobile-open {
     display: flex; flex-direction: column; gap: 4px;
     position: fixed; top: 70px; left: 0; right: 0;
     background: rgba(5,5,15,0.97); backdrop-filter: blur(20px);
     padding: 20px 24px; border-bottom: 1px solid var(--border);
+    animation: slideDownMenu 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
   .hero-stats { gap: 24px; }
   .stat-num { font-size: 1.8rem; }

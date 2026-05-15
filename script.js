@@ -230,6 +230,12 @@ const PROJECTS = [
     navLinks.classList.toggle('mobile-open');
   });
 
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('mobile-open') && !navbar.contains(e.target)) {
+      navLinks.classList.remove('mobile-open');
+    }
+  });
+
   // Close mobile menu on link click
   navLinks.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => navLinks.classList.remove('mobile-open'));
